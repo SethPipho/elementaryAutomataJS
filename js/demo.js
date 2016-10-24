@@ -5,4 +5,5 @@ window.onload = function()
 
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
+    console.log(intToBinary(17))
 }
