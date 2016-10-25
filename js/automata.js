@@ -1,5 +1,5 @@
 
-function rule(num)
+function Rule(num)
 {
     this.ruleNum = num
     this.ruleSet = intToBinary(num)
@@ -10,9 +10,14 @@ function rule(num)
         newArr[0] = 0;
         newArr[arr.length - 1] = 0
 
-        for (var i = 1; i < arr.length -1; i++)
+        for (var i = 0; i < arr.length; i++)
         {
-            var rule = binaryToInt([arr[i+1],arr[i], arr[i-1]])
+            var left = i-1
+            var right = i+1
+            if(left < 0) {left = arr.length - 1}
+            if(right > arr.length - 1) {right = 0}
+            
+            var rule = binaryToInt([arr[right],arr[i], arr[left]])
             newArr[i] = this.ruleSet[rule]
         }
 
